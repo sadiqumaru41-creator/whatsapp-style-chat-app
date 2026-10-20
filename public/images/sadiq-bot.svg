@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B132B"/>
+      <stop offset="0.5" stop-color="#1F2937"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="200" y1="120" x2="1000" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1200" rx="80" fill="url(#bg)"/>
+  <circle cx="600" cy="420" r="220" fill="url(#accent)" opacity="0.92"/>
+  <circle cx="600" cy="420" r="180" fill="#0F172A" opacity="0.92"/>
+  <path d="M540 360C540 322.385 571.385 291 609 291H634C671.615 291 703 322.385 703 360V390H540V360Z" fill="#E2E8F0"/>
+  <circle cx="600" cy="505" r="120" fill="#E2E8F0"/>
+  <path d="M450 870C450 760 520 690 600 690C680 690 750 760 750 870V930H450V870Z" fill="#E2E8F0"/>
+
+  <rect x="120" y="100" width="960" height="1000" rx="60" fill="rgba(15,23,42,0.28)" stroke="rgba(255,255,255,0.14)"/>
+  <text x="600" y="950" text-anchor="middle" fill="#F8FAFC" font-size="96" font-family="Arial, Helvetica, sans-serif" font-weight="700">Sadiq</text>
+  <text x="600" y="1025" text-anchor="middle" fill="#BAE6FD" font-size="42" font-family="Arial, Helvetica, sans-serif" font-weight="600">Bot: sadiq</text>
+  <text x="600" y="1080" text-anchor="middle" fill="#BBF7D0" font-size="34" font-family="Arial, Helvetica, sans-serif" font-weight="600">Number: +2348125149399</text>
+</svg>

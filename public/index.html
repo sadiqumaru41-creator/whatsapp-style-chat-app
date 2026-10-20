@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sadiq Bot</title>
+  <style>
+    :root {
+      --bg: #07111d;
+      --card: #0f1d2d;
+      --primary: #25d366;
+      --accent: #38bdf8;
+      --text: #e6f1ff;
+      --muted: #a7b8d0;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #07111d, #0d1726 42%, #0a1320);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(860px, 100%);
+      background: rgba(15, 29, 45, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+    }
+
+    .topbar {
+      background: linear-gradient(90deg, #1d3d5a, #13314f);
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+    }
+
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #22c55e, #0ea5e9);
+      border: 2px solid rgba(255,255,255,0.2);
+      font-size: 1.4rem;
+      color: white;
+    }
+
+    .status-pill {
+      background: rgba(37, 211, 102, 0.14);
+      color: #8ef0b1;
+      border: 1px solid rgba(37, 211, 102, 0.35);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 0;
+    }
+
+    .left, .right {
+      padding: 24px;
+    }
+
+    .left {
+      border-right: 1px solid var(--border);
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .stat-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .right {
+      background: rgba(255,255,255,0.02);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), #15a34a);
+      border-radius: 12px;
+      padding: 11px 14px;
+      font-weight: 700;
+      min-width: 150px;
+    }
+
+    @media (max-width: 760px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .left {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="topbar">
+      <div class="brand">
+        <div class="avatar">S</div>
+        <span>Sadiq Bot</span>
+      </div>
+      <span class="status-pill">Online</span>
+    </div>
+
+    <div class="content">
+      <div class="left">
+        <h1>WhatsApp Bot</h1>
+        <p>
+          This is a Render-ready WhatsApp bot project for Sadiq. It supports multiple sessions,
+          simple command replies, and a linking flow for WhatsApp devices.
+        </p>
+
+        <div class="grid">
+          <div class="stat">
+            <div class="stat-label">Bot name</div>
+            <div class="stat-value">sadiq</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Owner</div>
+            <div class="stat-value">Sadiq</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Number</div>
+            <div class="stat-value">+2348125149399</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Environment</div>
+            <div class="stat-value">Render</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <img src="/images/sadiq-bot.svg" alt="Sadiq bot image" />
+        <div class="button-row">
+          <a href="/images/sadiq-bot.svg" class="button" target="_blank">Open Image</a>
+          <a href="/health" class="button" target="_blank">Check Health</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
