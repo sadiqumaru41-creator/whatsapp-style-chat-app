@@ -57,6 +57,7 @@ Available commands:
 - .v
 - .vv
 - .link
+- .start
 
 ## Setup
 
