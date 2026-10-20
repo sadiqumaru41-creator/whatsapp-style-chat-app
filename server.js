@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const fs = require('fs');
 const { startSession, getSessionStatus, listSessions } = require('./lib/whatsappBot');
 
 const app = express();
@@ -35,8 +34,8 @@ app.get('/api/session/new', async (req, res) => {
     res.json({
       ok: true,
       session: name,
-      qrReady: !!session.qrCode,
-      message: 'Session started. Check Render logs for the QR code to link WhatsApp.'
+      pairingReady: !!session.pairingCode,
+      message: 'Session started. Check Render logs for the pairing code to link WhatsApp.'
     });
   } catch (error) {
     console.error('[SERVER] Failed to start session:', error);
@@ -44,13 +43,22 @@ app.get('/api/session/new', async (req, res) => {
   }
 });
 
-app.get('/api/session/:name/qr', async (req, res) => {
+app.get('/api/session/:name/pairing-code', async (req, res) => {
   const { name } = req.params;
   const status = getSessionStatus(name);
-  if (!status || !status.qrCode) {
-    return res.status(404).json({ error: 'No QR available for this session yet.' });
+
+  if (!status) {
+    return res.status(404).json({ error: 'Session not found' });
   }
-  res.json({ qrCode: status.qrCode, session: name });
+
+  res.json({
+    session: name,
+    pairingCode: status.pairingCode || null,
+    connected: !!status.connected,
+    message: status.pairingCode
+      ? 'Use the pairing code in WhatsApp to link the device.'
+      : 'Pairing code not generated yet. Wait for the bot to connect and generate one.'
+  });
 });
 
 app.get('/', (req, res) => {
@@ -67,9 +75,9 @@ app.get('/', (req, res) => {
   }
 
   app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-    console.log('Open the app in the browser to check status.');
-    console.log('For linking WhatsApp, scan the QR printed in the Render logs.');
+    console.log(`\nServer running on port ${PORT}`);
+    console.log('Use WhatsApp > Linked devices > Link with phone number');
+    console.log('The pairing code will appear in the Render logs once the bot connects.');
   });
 })();
 
