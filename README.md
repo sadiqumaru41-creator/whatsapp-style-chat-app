@@ -1,44 +1,31 @@
-# Sadiq WhatsApp Bot
+# Sadiq Termux WhatsApp Bot
 
-This project is a full WhatsApp bot built with Node.js and Baileys. It is designed to run on Render and uses a pairing code linking method instead of QR linking.
+This repo is a personal Termux-ready WhatsApp bot built for a single account. It is designed for direct DM use on your own device and includes a large command list plus a premium contact flow.
 
-Features:
-- Multiple WhatsApp sessions
-- Pairing code linking flow
-- Full command menu
-- Custom bot identity: Sadiq / sadiq / +2348125149399
-- Custom bot image
-- Friendly fun commands and demo commands
-- Render deployment ready
+Important:
+- This bot is for a personal WhatsApp account on your own device.
+- It does not create a public multi-user bot where random users receive pairing codes for your WhatsApp account.
+- Users can message the bot and receive commands and premium access instructions, but the bot cannot pair another account to your WhatsApp number.
 
-## Pairing code flow
-
-On your phone:
-1. Open WhatsApp
-2. Tap the 3 dots menu
-3. Select Linked devices
-4. Choose Link a device
-5. Select Link with phone number
-6. Enter the pairing code shown in Render logs
-
-The app logs a pairing code like:
-```text
-[main] PAIRING CODE: ABCD1234
-```
-
-Use that exact code to connect the bot.
+## What it supports
+- personal pairing-code login on Termux
+- large command list
+- premium gating for selected commands
+- admin VIP granting with .grantvip
+- free and premium command separation
+- owner contact flow for premium access
+- direct DM bot behavior
 
 ## Commands
-
-Available commands:
-- .menu
+The bot includes a large command list such as:
 - .help
-- .info
+- .menu
 - .status
-- .ping
+- .info
 - .time
 - .date
-- .echo <text>
+- .ping
+- .echo
 - .quote
 - .joke
 - .insult
@@ -51,50 +38,82 @@ Available commands:
 - .whoami
 - .number
 - .owner
+- .contact
 - .weather
-- .clear
 - .fun
-- .v
-- .vv
 - .link
+- .vip
+- .premium
+- .unlock
+- .secret
+- .special
+- .offer
+- .access
+- .plan
+- .activate
+- .upgrade
+- .support
+- .rules
+- .terms
+- .hello
+- .hi
+- .goodbye
+- .random
+- .truth
+- .dare
+- .love
+- .guess
+- .math
+- .calc
+- .points
+- .profile
+- .gift
+- .reward
+- .promo
+- .invite
+- .share
+- .helpvip
+- .admin
+- .grantvip
+- .removevip
+- .clear
 - .start
 
-## Setup
+## Premium access
+Premium-content commands are gated.
+If a user tries a premium command without access, the bot tells them to contact the owner at:
+
++2348125149399
+
+This is a manual premium flow, not a public payment system.
+
+## Termux install
+Run this in Termux:
 
 ```bash
+pkg update
+pkg install git nodejs
+
+git clone <your-repo-url>
+cd <repo-folder>
+
 npm install
-cp .env.example .env
 npm start
 ```
 
-## Render deployment
+## Pairing step
+When the bot starts, it prints a pairing code in the terminal.
 
-1. Push to GitHub
-2. Create a new Web Service on Render
-3. Connect this repository
-4. Use:
-   - Build Command: `npm install`
-   - Start Command: `npm start`
-   - Environment: `Node`
-   - Plan: `Free`
-5. Deploy
-6. Watch the Render logs for the pairing code
+On your phone:
+1. Open WhatsApp
+2. Go to Linked devices
+3. Select Link with phone number
+4. Enter the pairing code shown in Termux
 
-## Multi-session support
-
-You can create additional sessions with:
-```text
-https://YOUR_RENDER_URL.onrender.com/api/session/new?name=office
-```
-
-The session data is stored under the `sessions/` folder.
-
-## Bot identity
-
-- Name: Sadiq
-- Bot name: sadiq
-- Number: +2348125149399
+## Admin VIP commands
+After pairing the bot to your number, send these commands from the owner account:
+- .grantvip 23481234567890
+- .removevip 23481234567890
 
 ## Important note
-
-This project is built with Baileys for WhatsApp automation. For a production WhatsApp bot, you should use official WhatsApp Business APIs where applicable and follow Meta's platform rules.
+This is a personal bot project. It is not a public SaaS where random users get pairing codes from your number. That requires WhatsApp Business API infrastructure and official business setup.
